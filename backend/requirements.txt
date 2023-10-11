@@ -1,0 +1,33 @@
+# General purpose
+arrow==1.3.0
+httpx==0.25.0
+python_dotenv==1.0.0
+uvicorn==0.23.2
+
+# Authentication
+pyjwt[crypto] ==2.8.0
+passlib[bcrypt]==1.7.4
+
+# FastAPI and libs
+fastapi==0.103.2
+python-multipart==0.0.6
+email-validator==2.0.0
+pydantic-settings==2.0.3
+
+# Database
+## Postgres
+alembic==1.12.0
+asyncpg==0.28.0
+sqlalchemy[asyncio,mypy]==2.0.20
+
+# Monitoring and logging
+newrelic==9.1.0
+structlog==23.2.0
+
+# Mail
+mailersend==0.5.6
+jinja2==3.1.2
+
+# Other dependencies, for optimized build
+greenlet==3.0.0
+cffi==1.16.0

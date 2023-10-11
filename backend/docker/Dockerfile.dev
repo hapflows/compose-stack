@@ -1,0 +1,32 @@
+# pull official base image
+FROM python:3.11.6-slim-bullseye
+
+# set working directory
+WORKDIR /usr/src/app
+
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# install system dependencies
+RUN apt-get update \
+  && apt-get -y install netcat gcc git \
+  && apt-get clean
+
+# install python dependencies
+RUN pip install --upgrade pip
+
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt
+
+# create directory for the fastapi_server user
+RUN mkdir -p /home/fastapi_server
+
+# create the fastapi_server user
+RUN addgroup fastapi_server && \
+  adduser fastapi_server --ingroup fastapi_server --shell /usr/bin/bash && \
+  chown -R fastapi_server:fastapi_server /home/fastapi_server
+
+WORKDIR /home/fastapi_server/fastapi_server
+
+USER fastapi_server

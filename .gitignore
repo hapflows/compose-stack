@@ -1,0 +1,13 @@
+.DS_Store
+
+docker_data
+docker_data_dev
+docker_data_prod
+
+*.overrides
+
+.vscode
+
+newrelic.ini
+.coverage*
+frontend

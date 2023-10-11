@@ -1,0 +1,34 @@
+version: "3.3"
+
+services:
+  fastapi-next-postgres-dev:
+    build: ./docker/postgres
+    ports:
+      - "6432:5432"
+    volumes:
+      - ./docker_data_dev/postgres/data:/var/lib/postgresql/data
+    env_file:
+      - ./docker/config/.env.postgres.dev
+
+  fastapi-next-redis-dev:
+    image: redis:alpine
+
+  fastapi-next-backend-dev:
+    container_name: fastapi-next-backend-dev
+    image: fastapi-next-backend-dev
+    depends_on:
+      - fastapi-next-redis-dev
+      - fastapi-next-postgres-dev
+    build:
+      context: ./backend
+      dockerfile: docker/Dockerfile.dev
+    volumes:
+      - ./backend:/home/fastapi_server/fastapi_server
+      - ./docker_data_dev/logs/backend:/var/log/fastapi_server
+      - ./docker_data_dev/backend/mediafiles:/home/fastapi_server/fastapi_server/mediafiles
+    ports:
+      - "8150:8150"
+    env_file:
+      - ./docker/config/.env.backend.dev
+      - ./docker/config/.env.backend.dev.overrides
+    command: uvicorn fastapi_server.main:app --reload --workers 1 --host 0.0.0.0 --port 8150

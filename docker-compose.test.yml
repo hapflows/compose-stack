@@ -1,0 +1,33 @@
+version: "3.3"
+
+services:
+  fastapi-next-postgres-test:
+    build: ./docker/postgres
+    logging:
+      driver: "none"
+    env_file:
+      - ./docker/config/.env.postgres.dev
+
+  fastapi-next-redis-test:
+    image: redis:alpine
+    logging:
+      driver: "none"
+
+  fastapi-next-api-test:
+    container_name: fastapi-next-api-test
+    image: fastapi-next-api-test
+    depends_on:
+      - fastapi-next-redis-test
+      - fastapi-next-postgres-test
+    build:
+      context: ./backend
+      dockerfile: docker/Dockerfile.test.opt
+    volumes:
+      - ./backend:/home/fastapi_server/fastapi_server
+    ports:
+      - "8060:8060"
+    env_file:
+      - ./docker/config/.env.backend.test
+    command: pytest --cov=fastapi_server --cov-report=html --cov-config=.coveragerc
+    # Single file example:
+    # command: pytest --cov=fastapi_server --cov-report=html --cov-config=.coveragerc fastapi_server/tests/integration/feature_flags/test_ff_enable_registration.py
