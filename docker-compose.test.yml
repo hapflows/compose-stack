@@ -1,24 +1,24 @@
 version: "3.3"
 
 services:
-  fastapi-next-postgres-test:
+  compose-stack-postgres-test:
     build: ./docker/postgres
     logging:
       driver: "none"
     env_file:
       - ./docker/config/.env.postgres.dev
 
-  fastapi-next-redis-test:
+  compose-stack-redis-test:
     image: redis:alpine
     logging:
       driver: "none"
 
-  fastapi-next-api-test:
-    container_name: fastapi-next-api-test
-    image: fastapi-next-api-test
+  compose-stack-api-test:
+    container_name: compose-stack-api-test
+    image: compose-stack-api-test
     depends_on:
-      - fastapi-next-redis-test
-      - fastapi-next-postgres-test
+      - compose-stack-redis-test
+      - compose-stack-postgres-test
     build:
       context: ./backend
       dockerfile: docker/Dockerfile.test.opt

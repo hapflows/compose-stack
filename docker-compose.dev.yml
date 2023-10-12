@@ -1,7 +1,7 @@
 version: "3.3"
 
 services:
-  fastapi-next-postgres-dev:
+  compose-stack-postgres-dev:
     build: ./docker/postgres
     ports:
       - "6432:5432"
@@ -10,15 +10,15 @@ services:
     env_file:
       - ./docker/config/.env.postgres.dev
 
-  fastapi-next-redis-dev:
+  compose-stack-redis-dev:
     image: redis:alpine
 
-  fastapi-next-backend-dev:
-    container_name: fastapi-next-backend-dev
-    image: fastapi-next-backend-dev
+  compose-stack-backend-dev:
+    container_name: compose-stack-backend-dev
+    image: compose-stack-backend-dev
     depends_on:
-      - fastapi-next-redis-dev
-      - fastapi-next-postgres-dev
+      - compose-stack-redis-dev
+      - compose-stack-postgres-dev
     build:
       context: ./backend
       dockerfile: docker/Dockerfile.dev

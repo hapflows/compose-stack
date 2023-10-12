@@ -11,7 +11,7 @@ psql -h postgres-dev -U postgres_user postgres
 Execute a backup:
 
 ```bash
-docker compose -f docker-compose.prod.yml  exec fastapi-next-postgres-prod pg_dump -U postgres_user fastapi_next > dump_231011.sql
+docker compose -f docker-compose.prod.yml  exec compose-stack-postgres-prod pg_dump -U postgres_user compose_stack > dump_231011.sql
 ```
 
 ## Tests
@@ -39,5 +39,5 @@ docker-compose -f docker-compose.test.yml build
 Run the tests:
 
 ```
-docker-compose -f docker-compose.test.yml up --exit-code-from fastapi-next-api-test
+docker-compose -f docker-compose.test.yml up --exit-code-from compose-stack-api-test
 ```

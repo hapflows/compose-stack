@@ -98,8 +98,8 @@ To create a FF via SQL, enter PSQL console, then run
 (change name of DB depending on environment):
 
 ```bash
-docker compose -f docker-compose.dev.yml exec fastapi-next-postgres-dev bash
-  > psql -h 127.0.0.1 -U postgres_user fastapi_next_local
+docker compose -f docker-compose.dev.yml exec compose-stack-postgres-dev bash
+  > psql -h 127.0.0.1 -U postgres_user compose_stack_local
 ```
 
 ```sql
@@ -111,14 +111,14 @@ INSERT INTO feature_flags (codename, is_active, label) VALUES ('FF_ENABLE_REGIST
 To run a script, launch a bash session in the docker container:
 
 ```bash
- docker-compose -f docker-compose.dev.yml exec fastapi-next-dev bash
+ docker-compose -f docker-compose.dev.yml exec compose-stack-dev bash
  cd fastapi_server;
 ```
 
 Or, for production (note: do not `cd` here):
 
 ```bash
-docker compose -f docker-compose.prod.yml exec fastapi-next-api-prod sh
+docker compose -f docker-compose.prod.yml exec compose-stack-api-prod sh
 ```
 
 Then, run the scripts as follow.

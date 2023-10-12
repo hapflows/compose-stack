@@ -7,10 +7,10 @@ from .templates.templates import get_html_from_template
 from .settings import SETTINGS
 
 mail_from = {
-    "name": "FastAPI Next",
-    "email": "info@fastapi-next.com",
+    "name": "Compose Stack",
+    "email": "noreply@compose-stack.com",
 }
-default_vars = [{"var": "support_email", "value": "support@fastapi-next.com"}]
+default_vars = [{"var": "support_email", "value": "noreply@compose-stack.com"}]
 
 logger = get_logger("notifications")
 

@@ -3,7 +3,7 @@ from starlette.testclient import TestClient
 
 
 def test_registration_flow(test_app: TestClient):
-    email = "testuser@fastapi-next.com"
+    email = "testuser@compose-stack.com"
     register_payload = {
         "email": email,
         "password": "SuperSecret1!",

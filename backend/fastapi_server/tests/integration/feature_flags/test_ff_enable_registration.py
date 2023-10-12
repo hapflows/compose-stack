@@ -15,7 +15,7 @@ async def test_registration_flow(test_app: TestClient):
     await db_session.close()
 
     # Register, with success
-    email = "testuser_ff_register_success@fastapi-next.com"
+    email = "testuser_ff_register_success@compose-stack.com"
     register_payload = {
         "email": email,
         "password": "SuperSecret1!",
@@ -34,7 +34,7 @@ async def test_registration_flow(test_app: TestClient):
     await db_session.close()
 
     # Register, 404
-    email = "testuser_ff_register_fail@fastapi-next.com"
+    email = "testuser_ff_register_fail@compose-stack.com"
     register_payload = {
         "email": email,
         "password": "SuperSecret1!",

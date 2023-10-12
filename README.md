@@ -1,6 +1,6 @@
-# fastapi-next
+# compose-stack
 
-FastAPI-Next is a project starter that offers a production-ready
+compose-stack is a project starter that offers a production-ready
 configuration leveraging:
 
 - [`FastAPI`](https://fastapi.tiangolo.com/): Python web framework
@@ -34,14 +34,14 @@ registration quickly with latest technology based on Python and React.
 Requirements:
 
 - `docker`
-- (optional) a Python virtual environment (`fastapi-next`) to initialise
+- (optional) a Python virtual environment (`compose-stack`) to initialise
   the services and for native VSCode environment
 
 ### Native Installation
 
 ```sh
-python3 -m venv fastapi-next
-source fastapi-next/bin/activate
+python3 -m venv compose-stack
+source compose-stack/bin/activate
 pip install -r backend/requirements.txt -r backend/requirements_dev.txt
 ```
 
@@ -86,7 +86,7 @@ For other frontend commands, see the `README` file inside the
 # run once or whenever a dependency change
 docker-compose -f docker-compose.test.yml build
 # run the tests
-docker-compose -f docker-compose.test.yml up --exit-code-from fastapi-next-api-test
+docker-compose -f docker-compose.test.yml up --exit-code-from compose-stack-api-test
 ```
 
 ## System bootstrap
@@ -98,7 +98,7 @@ The bootstrap phase will:
 Run:
 
 ```sh
-docker-compose -f docker-compose.dev.yml exec fastapi-next-backend-dev alembic upgrade head
+docker-compose -f docker-compose.dev.yml exec compose-stack-backend-dev alembic upgrade head
 ```
 
 ## Backend documentation
@@ -125,7 +125,7 @@ docker-compose -f docker-compose.prod.yml up -d
 
 #### Note
 
-The nginx configuration and environment variables are tailored to run on `fastapi-next.com` domain,
+The nginx configuration and environment variables are tailored to run on `compose-stack.com` domain,
 so they need to be changed in order to work correctly with your domain.
 
 ## Debugging
@@ -135,6 +135,6 @@ Different containers can be debugged in different ways.
 - To debug a Next.js error, start the container without Demon mode.
 - To enter Postgres console, run:
   ```sh
-  docker compose -f docker-compose.prod.yml exec fastapi-next-postgres-prod bash
-  > psql -h 127.0.0.1 -U postgres_user fastapi_next
+  docker compose -f docker-compose.prod.yml exec compose-stack-postgres-prod bash
+  > psql -h 127.0.0.1 -U postgres_user compose_stack
   ```
