@@ -1,0 +1,28 @@
+.#{$ui-prefix}__title {
+  font-weight: 500;
+  margin: 0;
+
+  &--sticky {
+    position: sticky;
+    top: -1px;
+    height: 42px;
+    background-color: var(--background-color);
+  }
+}
+
+.#{$ui-prefix}__title__anchor {
+  line-height: 1rem;
+  text-decoration: none;
+
+  &:visited:not(.#{$ui-prefix}__title__anchor--active) {
+    color: inherit;
+  }
+
+  &:hover::after {
+    content: '\1F517';
+    font-size: 0.6em;
+    margin-left: 0.5em;
+    position: relative;
+    top: -0.2em;
+  }
+}

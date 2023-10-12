@@ -1,0 +1,75 @@
+.#{$ui-prefix}__box {
+  display: flex;
+  align-items: flex-start;
+  padding: $ui-page-padding;
+  border-radius: 5px;
+
+  &--warning {
+    border: 1px solid $ui-color-warning;
+    background-color: $ui-color-warning-light;
+  }
+
+  &--info {
+    border: 1px solid $ui-color-info;
+    background-color: $ui-color-info-light;
+  }
+
+  &--success {
+    border: 1px solid $ui-color-positive;
+    background-color: $ui-color-positive-light;
+  }
+
+  &__header {
+    font-weight: 800;
+  }
+
+  &__body {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+  }
+
+  &__side {
+    display: flex;
+    align-items: flex-start;
+  }
+  &__icon-container {
+    display: flex;
+    align-items: center;
+    &--warning {
+      background-color: $ui-color-warning;
+      color: $ui-color-on-warning;
+      padding: 9px;
+      border-radius: 50%;
+    }
+    &--info {
+      background-color: $ui-color-info;
+      color: $ui-color-on-info;
+      padding: 7px;
+      border-radius: 50%;
+    }
+    &--success {
+      background-color: $ui-color-positive;
+      color: $ui-color-on-positive;
+      padding: 7px;
+      border-radius: 50%;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+    line-height: 1.3rem;
+
+    &--minimized {
+      height: 40px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+.#{$ui-prefix}__box--shadowed {
+  box-shadow: $ui-shadow-small;
+}

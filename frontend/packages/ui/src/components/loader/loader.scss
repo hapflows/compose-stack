@@ -1,0 +1,140 @@
+/**
+* CREDITS: inspired by https://codepen.io/CKH4/pen/ZGNyep
+*/
+
+@import '../../style/mixins/keyframes-vendors';
+
+.#{$ui-prefix}__loader {
+  position: relative;
+}
+
+.#{$ui-prefix}__loader-container--triangle,
+.#{$ui-prefix}__loader-container--line {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.#{$ui-prefix}__loader--triangle {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.#{$ui-prefix}__loader__circle--triangle {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 100%;
+  display: inline-block;
+  animation: slide 1s infinite;
+
+  &:nth-child(3) {
+    animation-delay: 0s;
+    left: calc(50% - 25px);
+    top: 9px;
+    background: $ui-color-primary;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.3s;
+    left: 9px;
+    bottom: 9px;
+    background: $ui-color-secondary;
+  }
+  &:nth-child(1) {
+    animation-delay: 0.6s;
+    right: 9px;
+    bottom: 9px;
+    background: $ui-color-accent;
+  }
+}
+
+.#{$ui-prefix}__loader--line {
+  display: inline-flex;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.#{$ui-prefix}__loader__circle--line {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-radius: 100%;
+  display: inline-block;
+  animation: slide 1s infinite;
+
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+    background: $ui-color-primary;
+    left: 8px;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+    background: $ui-color-secondary;
+    left: 34px;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+    background: $ui-color-accent;
+    left: 58px;
+  }
+}
+
+.#{$ui-prefix}__loader-container--inline {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+}
+
+.#{$ui-prefix}__loader--inline {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  top: 1px;
+}
+
+.#{$ui-prefix}__loader__circle--inline {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  border-radius: 100%;
+  display: inline-block;
+  animation-delay: 0s;
+  left: 2px;
+  top: 0;
+  animation: slideCenter 1s infinite;
+  border: 1px solid white;
+}
+
+@include keyframes-vendors(slide) {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@include keyframes-vendors(slideCenter) {
+  0% {
+    background: $ui-color-primary;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    background: $ui-color-secondary;
+    transform: scale(1.2);
+  }
+  100% {
+    background: $ui-color-primary;
+    transform: scale(1);
+  }
+}

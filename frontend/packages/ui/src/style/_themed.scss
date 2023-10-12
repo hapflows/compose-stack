@@ -1,0 +1,55 @@
+:root {
+  --text-color: #{$ui-font-color};
+  --text-color-secondary: #{$ui-color-neutral-dark};
+  --text-color-background: #{$ui-color-gray-light};
+  --text-color-background-over: #{darken($ui-color-neutral, 3)};
+  --text-color-light: #{$ui-color-neutral-light};
+  --text-color-light-over: #{darken($ui-color-neutral-light, 3)};
+  --text-color-dark: #{$ui-color-neutral-dark};
+  --text-color-dark-over: #{darken($ui-color-neutral-dark, 3)};
+  --color-title: #{$ui-color-black-d2};
+  --color-title-over: #{$ui-color-black-d1};
+  --color-black-over: #{lighten(#232323, 6)};
+  --background-color: white;
+  --background-color-lighter: #f8fafd;
+  --background-color-light: #{$ui-color-gray-light-l2};
+  --background-color-light-over: #{darken($ui-color-gray-light-l2, 3)};
+  --background-color-accent: #f2f2f2;
+  --background-color-accent-over: #{darken(#f2f2f2, 3)};
+  --link-color: #{$ui-color-blue};
+  --link-color-over: #{lighten($ui-color-blue, 12)};
+  --border-color: #cfcfcf;
+  --border-color-light: #{$ui-color-grey-light};
+  --border-color-background: #f2f2f2;
+  --primary-color: #{$ui-color-primary};
+  --primary-color-gradient: #{lighten($ui-color-primary, 5)};
+  --primary-color-light: #{$ui-color-primary-light};
+  --primary-color-medium: #{lighten($ui-color-primary, 12)};
+  --primary-color-disabled: #{$ui-color-primary-disabled};
+  --primary-color-over: #{$ui-color-primary-over};
+  --primary-color-background: #{lighten($ui-color-primary, 43)}; // #f3f7ff #{$ui-color-primary-over};
+  --on-primary-color: #{$ui-color-on-primary};
+  --secondary-color: #{$ui-color-secondary};
+  --secondary-color-disabled: #{$ui-color-secondary-disabled};
+  --secondary-color-over: #{$ui-color-secondary-over};
+  --on-secondary-color: #{$ui-color-on-secondary};
+  --accent-color: #{$ui-color-accent};
+  --on-accent-color: #{$ui-color-on-accent};
+  --neutral-color: #{$ui-color-neutral};
+  --on-neutral-color: #{$ui-color-on-neutral};
+  --form-label-color: #666666;
+  --box-shadow-light: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --box-shadow-overlay: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 11px rgba(0, 0, 0, 0.1);
+  --divider-color: #ededed;
+  --placeholder-color: #999;
+  --mobile-bar-background: #f8fafd;
+  --mobile-bar-color: #{$ui-font-color};
+  --mobile-bar-icon-color: #{lighten($ui-font-color, 30)};
+  --ui-font-family: #{$ui-font};
+  --background-color-gradient-primary-to-secondary: linear-gradient(
+    to right,
+    var(--primary-color) 30%,
+    var(--primary-color-over) 90%
+  );
+  --slider-completed: #{lighten($ui-color-primary, 28)};
+}

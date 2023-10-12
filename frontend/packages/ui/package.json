@@ -1,0 +1,89 @@
+{
+  "name": "@compose-stack-ui/ui",
+  "author": "compose-stack-ui <info@compose-stack.com>",
+  "version": "0.0.1",
+  "description": "Components of @compose-stack-ui",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "scripts",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn build-js && yarn build-styles",
+    "build-js": "rollup -c",
+    "build-styles": "yarn compile-css-min && yarn bundle-scss-all && yarn bundle-scss-vars",
+    "dev": "yarn watch & yarn compile-css-min --watch",
+    "watch": "yarn rollup --watch --watch.clearScreen",
+    "rollup": "rollup -c",
+    "compile-css": "sass src/style/ui.full.scss dist/ui.full.css",
+    "compile-css-min": "sass src/style/ui.full.scss dist/ui.full.min.css --style=compressed",
+    "bundle-scss-all": "scss-bundle -e src/style/ui.full.scss -o dist/ui.full.scss -p ../../ --dedupeGlobs **/vars/_*.scss",
+    "bundle-scss-vars": "yarn run scss-bundle -e src/style/vars/_main.scss -o dist/_vars.scss",
+    "test": "jest",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+  },
+  "peerDependencies": {
+    "material-design-icons-iconfont": ">=6.7.0",
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
+  },
+  "optionalDependencies": {
+    "focus-trap-react": "^10.2.2",
+    "material-design-icons-iconfont": "^6.7.0",
+    "react-select": "^5.7.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/plugin-transform-runtime": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "@babel/runtime": "^7.23.2",
+    "@rollup/plugin-commonjs": "^25.0.5",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@testing-library/dom": "^9.3.3",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.5.1",
+    "@types/jest": "^29.5.5",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
+    "coveralls": "^3.1.1",
+    "focus-trap-react": "^10.2.2",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "material-design-icons-iconfont": "^6.7.0",
+    "prettier": "^3.0.3",
+    "prettier-eslint": "^15.0.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-select": "^5.7.7",
+    "react-test-renderer": "^18.2.0",
+    "rollup": "^4.0.2",
+    "rollup-plugin-cleaner": "^1.0.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-visualizer": "^5.9.2",
+    "sass": "^1.69.3",
+    "scss-bundle": "^3.1.2",
+    "ts-jest": "^29.1.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "upgrade": "^1.1.0",
+    "yarn-upgrade-all": "^0.7.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "resolutions": {
+    "jest-environment-jsdom": "^27.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

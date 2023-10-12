@@ -1,0 +1,13 @@
+.#{$ui-prefix}__text {
+  margin-bottom: 1em;
+  line-height: 1.6em;
+}
+
+.#{$ui-prefix}__text--big {
+  font-size: $ui-font-size-big;
+  font-weight: 300;
+}
+
+.#{$ui-prefix}__text--small {
+  font-size: $ui-font-size-small;
+}

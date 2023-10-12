@@ -1,0 +1,60 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
+.#{$ui-prefix}__icon {
+    vertical-align: middle;
+}
+
+.#{$ui-prefix}__icon--90deg {
+    transform: rotate(90deg);
+}
+.#{$ui-prefix}__icon--180deg {
+    transform: rotate(180deg);
+}
+.#{$ui-prefix}__icon--270deg {
+    transform: rotate(270deg);
+}
+
+.#{$ui-prefix}__icon.#{$ui-prefix}__icon--xs {
+    font-size: 15px;
+}
+
+.#{$ui-prefix}__icon.#{$ui-prefix}__icon--sm {
+    font-size: 20px;
+}
+
+.#{$ui-prefix}__icon.#{$ui-prefix}__icon--md {
+    font-size: 24px;
+}
+
+.#{$ui-prefix}__icon.#{$ui-prefix}__icon--lg {
+    font-size: 36px;
+}
+
+.#{$ui-prefix}__icon.#{$ui-prefix}__icon--xl {
+    font-size: 48px;
+}
+
+.#{$ui-prefix}__icon.#{$ui-prefix}__icon--xxl {
+    font-size: 64px;
+}
+
+.#{$ui-prefix}__icon--clickable {
+    cursor: pointer;
+}
+
+.#{$ui-prefix}__icon--spin {
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}

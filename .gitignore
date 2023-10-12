@@ -10,4 +10,4 @@ docker_data_prod
 
 newrelic.ini
 .coverage*
-frontend
+frontend2

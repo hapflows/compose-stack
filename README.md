@@ -8,8 +8,9 @@ configuration leveraging:
 - [`SQLAlchemy 2`](https://www.sqlalchemy.org/): Python SQL toolkit
 - [`Alembic`](https://alembic.sqlalchemy.org/en/latest/): SQLAlchemy migration tool
 - [`AsyncPG`](https://magicstack.github.io/asyncpg/current/): Async PostgreSQL interface
-- [`NextJS`](https://nextjs.org/): the React framework for the Web
-- [`NewRelic`](https://newrelic.com/): Observability platform
+- [`NextJS`](https://nextjs.org/): the React framework for the Web (to be added)
+- [`NewRelic`](https://newrelic.com/): Observability platform (to be added)
+- [`Playwright`](https://playwright.dev/): Observability platform (to be added)
 
 Additionally, it comes with built-in features:
 
@@ -20,11 +21,14 @@ Additionally, it comes with built-in features:
 - Feature flags setup (one available, to control if new users can register or not)
 - Four frontend main packages, loosely based on
   [`borrow-ui`](https://www.borrow-ui.dev):
-  - UI components package, to develop reusable components
+  - UI components package, to develop reusable components, styled with
+    [`scss`](https://sass-lang.com/)
   - A documentation package based on Storybook
   - App based on NextJS, with home page, user registration, logged in page, and user
     password reset form
   - Website based on NextJS and MDX
+- High test coverage, with backend API tests, frontend unit tests and
+  automated comprehensive integration tests.
 
 The out-of-the-box setup allows to prototype applications that requires users
 registration quickly with latest technology based on Python and React.

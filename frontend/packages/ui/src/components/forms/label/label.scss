@@ -1,0 +1,40 @@
+.#{$ui-prefix}__form__label {
+  color: $ui-form-label-color;
+  font-weight: 400;
+  display: inline-block;
+}
+
+.#{$ui-prefix}__form__label--alignment-left {
+  text-align: left;
+}
+.#{$ui-prefix}__form__label--alignment-center {
+  text-align: center;
+}
+.#{$ui-prefix}__form__label--alignment-right {
+  text-align: right;
+}
+.#{$ui-prefix}__form__label--valignment-top {
+  margin-top: 6px;
+}
+.#{$ui-prefix}__form__label--valignment-middle {
+}
+.#{$ui-prefix}__form__label--valignment-bottom {
+  margin-bottom: 10px;
+}
+
+.#{$ui-prefix}__form__label--required {
+  color: $ui-color-negative;
+  font-size: 12px;
+  margin-top: -6px;
+  display: inline-block;
+}
+
+.#{$ui-prefix}__form__label--horizontal {
+  display: inline-block;
+  padding-right: $ui-form-label-padding-right;
+  line-height: 100%;
+}
+
+.#{$ui-prefix}__form__label--vertical {
+  margin-bottom: 0.5rem;
+}

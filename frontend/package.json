@@ -1,0 +1,17 @@
+{
+  "name": "compose-stack-ui",
+  "author": "compose-stack-ui <info@compose-stack.com>",
+  "description": "Frontend packages for FastAPI Next project starter",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "ui:dev": "yarn workspace @compose-stack-ui/ui run dev",
+    "ui:test": "yarn workspace @compose-stack-ui/ui run test",
+    "ui:build": "yarn workspace @compose-stack-ui/ui run build",
+    "ui:coveralls": "yarn workspace @compose-stack-ui/ui run coveralls"
+  },
+  "packageManager": "yarn@3.2.1"
+}

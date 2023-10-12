@@ -1,0 +1,218 @@
+.#{$ui-prefix}__input {
+  flex-direction: column;
+  position: relative;
+
+  width: 100%;
+
+  &,
+  &__group {
+    align-items: center;
+    display: flex;
+  }
+
+  &__group {
+    width: 100%;
+  }
+
+  &:not(:disabled):hover {
+    border-color: $ui-form-input-border-color-over;
+  }
+
+  &__textbox {
+    border: 1px solid $ui-form-input-border-color;
+    border-radius: 7px;
+    font-size: pxToRem(16);
+    line-height: createLineHeight(16, 20);
+    transition: border-color $ui-form-transition, background-color $ui-form-transition,
+      box-shadow $ui-form-transition;
+    width: 100%;
+    color: var(--text-color);
+
+    &:focus {
+      box-shadow: 0 0 0 1px $ui-form-input-border-color-over;
+      outline: none;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $ui-form-input-border-color-over;
+    }
+
+    &--invalid,
+    &--invalid:focus,
+    &--invalid:hover {
+      border-color: $ui-color-negative;
+    }
+
+    &::placeholder {
+      color: $ui-form-placeholder-color;
+      font-family: $ui-font;
+    }
+
+    &--xs {
+      min-height: getSize(8);
+      padding: getSize(1) getSize(2);
+      font-size: 14px;
+    }
+
+    &--sm {
+      min-height: getSize(10);
+      padding: getSize(1) getSize(2);
+      font-size: pxToRem(14);
+    }
+
+    &--md {
+      min-height: getSize(12);
+      padding: getSize(2) getSize(3);
+      font-size: pxToRem(14);
+    }
+
+    &--lg {
+      min-height: getSize(14);
+      padding: getSize(3) getSize(3);
+    }
+
+    &--xl {
+      min-height: getSize(16);
+      padding: getSize(4) getSize(4);
+    }
+
+    &--left-icon {
+      padding-left: getSize(11);
+    }
+
+    &--right-icon {
+      padding-right: getSize(11);
+    }
+  }
+
+  &__textbox--invalid#{&}__textbox--floating-label + &__label {
+    color: $ui-color-negative;
+  }
+
+  &__textbox--disabled {
+    pointer-events: none;
+  }
+
+  &__textbox--disabled,
+  &__textbox--disabled:hover {
+    background-color: $ui-color-neutral-white-dark;
+    border-color: var(--border-color-light);
+    cursor: not-allowed;
+  }
+
+  &__textbox--disabled,
+  &__textbox--disabled + &__label {
+    color: $ui-color-neutral;
+  }
+
+  & {
+    &__textbox--xs + &__label {
+      transform: translate(getSize(4), getSize(1.5));
+    }
+
+    &__textbox--sm + &__label {
+      transform: translate(getSize(4), getSize(2.5));
+    }
+
+    &__textbox--left-icon#{&}__textbox--sm + &__label {
+      transform: translate(getSize(11), getSize(2.5));
+    }
+
+    &__textbox--md + &__label {
+      transform: translate(getSize(4), getSize(3.5));
+    }
+
+    &__textbox--left-icon#{&}__textbox--md + &__label {
+      transform: translate(getSize(11), getSize(3.5));
+    }
+
+    &__textbox--lg + &__label {
+      transform: translate(getSize(4), getSize(4.5));
+    }
+
+    &__textbox--left-icon#{&}__textbox--lg + &__label {
+      transform: translate(getSize(11), getSize(4.5));
+    }
+
+    &__textbox--xl + &__label {
+      transform: translate(getSize(4), getSize(6));
+    }
+
+    &__textbox--left-icon#{&}__textbox--xl + &__label {
+      transform: translate(getSize(11), getSize(6));
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    z-index: 2;
+
+    &--left {
+      left: getSize(3);
+    }
+
+    &--right {
+      right: getSize(3);
+    }
+
+    &#{&}--disabled,
+    &#{&}--disabled:hover,
+    &#{&}--disabled:focus {
+      color: $ui-color-neutral-light;
+      cursor: not-allowed;
+    }
+  }
+
+  &__icon,
+  &__label {
+    color: $ui-color-neutral-dark;
+  }
+
+  &__label {
+    font-size: pxToRem(16);
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform-origin: left top;
+    transition: color $ui-form-transition, transform $ui-form-transition;
+    z-index: 1;
+
+    &::before {
+      background-color: transparent;
+      content: '';
+      display: block;
+      height: 1px;
+      left: -4px;
+      padding: 0 4px;
+      position: absolute;
+      transition: background-color 100ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+      width: calc(100% + 8px);
+      z-index: -1;
+    }
+  }
+
+  &__textbox:focus + &__label {
+    color: var(--primary-color);
+  }
+
+  &__textbox--invalid:focus + &__label {
+    color: $ui-color-negative;
+  }
+
+  &__textbox:focus + &__label,
+  &__textbox--floating-label#{&}__textbox + &__label {
+    transform: translate(getSize(4), -8px) scale(0.75);
+  }
+
+  &__textbox:focus + &__label::before,
+  &__textbox--floating-label + &__label::before {
+    background-color: white;
+  }
+
+  &__helper {
+    color: $ui-color-negative;
+    padding: getSize(1) getSize(4) 0;
+    width: 100%;
+  }
+}

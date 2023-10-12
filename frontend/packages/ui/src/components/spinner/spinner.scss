@@ -1,0 +1,58 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.#{$ui-prefix}__spinner {
+  animation: 0.6s linear 0s infinite normal none running rotate;
+  border-top: 2px solid currentcolor;
+  border-right: 2px solid currentcolor;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-radius: 99999px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  display: inline-block;
+  flex-shrink: 0;
+  color: inherit;
+
+  &--lg {
+    width: getSize(10);
+    height: getSize(10);
+  }
+
+  &--md {
+    width: getSize(8);
+    height: getSize(8);
+  }
+
+  &--sm {
+    width: getSize(6);
+    height: getSize(6);
+  }
+
+  &--xs {
+    width: getSize(4);
+    height: getSize(4);
+  }
+
+  // Visually hide the text but not from screen readers
+  &__text {
+    border: 0px;
+    clip: rect(0px, 0px, 0px, 0px);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+  }
+}

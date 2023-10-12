@@ -1,0 +1,87 @@
+@function getFromMap($map, $keys...) {
+  @each $key in $keys {
+    @if map-has-key($map, $key) {
+      $map: map-get($map, $key);
+    } @else {
+      @error "Error! The key #{$key} does not exist in #{$map}";
+    }
+  }
+
+  @return $map;
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function pxToRem($value) {
+  @return (math.div($value, strip-unit($ui-font-size))) * 1rem;
+}
+
+// Creates line-heights relative to the supplied font-size value. Supply both values as a number.
+@function createLineHeight($fontSize: 16, $lineHeight: 20) {
+  @if type-of($fontSize) == number and type-of($lineHeight) == number {
+    @return math.div($lineHeight, $fontSize);
+  }
+
+  @error "Error! Only numbers are permitted as arguements.";
+}
+
+@function is-string($value) {
+  @return type-of($value) == string;
+}
+
+@function is-minmax($value) {
+  @return is-string($value) and str-index($value, 'minmax') != null;
+}
+
+@function is-repeat($value) {
+  @return is-string($value) and str-index($value, 'repeat') != null;
+}
+
+@function is-not-null($value) {
+  @return $value != null;
+}
+
+@function is-unitless($value) {
+  @return is-not-null($value) and is-number($value) and unitless($value);
+}
+
+@function is-px($value) {
+  @return is-number($value) and str-index('px', unit($value)) != null;
+}
+
+@function has-unit-value($value) {
+  @return str-index($value, 'px') or str-index($value, 'fr') or str-index($value, 'rem');
+}
+
+@function is-incorrect-key($key, $keys: $valid-keys) {
+  @return index($keys, $key) == null;
+}
+
+@function is-correct-keyword($value, $keywords) {
+  @return index($keywords, $value) != null;
+}
+
+@function is-incorrect-keyword($value, $keywords) {
+  @return index($keywords, $value) == null;
+}
+
+@function appendUnit($value, $unit: 'fr') {
+  @if is-string($value) {
+    @return $value;
+  }
+
+  @if is-unitless($value) {
+    @if ($value) == 0 {
+      @return $value;
+    }
+    @return #{$value}#{$unit};
+  }
+
+  @return $value;
+}

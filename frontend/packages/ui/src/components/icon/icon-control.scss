@@ -1,0 +1,35 @@
+@import '../../style/mixins/icons';
+
+.#{$ui-prefix}__icon-control {
+  @include icon-control;
+  padding: 4px;
+  margin: 0;
+
+  &--normal {
+    color: $ui-color-neutral;
+    border: 1px solid transparent;
+
+    &:hover {
+      color: $ui-color-on-neutral-light;
+      background-color: $ui-color-neutral-light;
+    }
+  }
+  &--outline {
+    color: $ui-color-neutral;
+    border: 1px solid transparent;
+
+    &:hover {
+      border: 1px solid $ui-color-neutral;
+    }
+  }
+
+  &--background {
+    color: var(--text-color-background);
+    border: 1px solid transparent;
+
+    &:hover {
+      color: $ui-color-on-neutral-light;
+      background-color: $ui-color-neutral-light;
+    }
+  }
+}
