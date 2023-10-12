@@ -30,7 +30,7 @@ This structure allows to have shared packages/libraries between
 different projects and to have these projects together in the same
 repository, even if they are using different technologies.
 
-For example, in this way we can have a NextJS application alongside
+For example, in this way we can have a Next.js application alongside
 a Storybook documentation site, both sharing the UI library.
 We can also scale more by introducing a landing site, an administration
 dedicated application, etc., possibly sharing packages.

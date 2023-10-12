@@ -11,7 +11,10 @@
     "ui:dev": "yarn workspace @compose-stack-ui/ui run dev",
     "ui:test": "yarn workspace @compose-stack-ui/ui run test",
     "ui:build": "yarn workspace @compose-stack-ui/ui run build",
-    "ui:coveralls": "yarn workspace @compose-stack-ui/ui run coveralls"
+    "ui:coveralls": "yarn workspace @compose-stack-ui/ui run coveralls",
+    "next-webapp:dev": "yarn workspaces foreach -pivR --from '@compose-stack-ui/(ui|next-webapp)' run dev",
+    "next-webapp:build": "yarn workspaces foreach -itR --from '@compose-stack-ui/(ui|next-webapp)' run build",
+    "next-webapp:start": "yarn workspace @compose-stack-ui/next-webapp run start"
   },
   "packageManager": "yarn@3.2.1"
 }

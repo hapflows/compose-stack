@@ -2,9 +2,10 @@
 
 This is the frontend of compose-stack project.
 
-It includes few packages, where the main ones are:
+It includes few apps and packages, where the main ones are:
 
-- `ui`: a component library;
+- `packages/ui`: a component library;
+- `apps/next-webapp`: a web application written with Next.js framework;
 
 ## Monorepo
 
@@ -39,10 +40,28 @@ To develop the UI components package, run:
 yarn ui:dev
 ```
 
+To develop the webapp, run:
+
+```bash
+yarn next-webapp:dev
+```
+
 ## Build
 
 To build the UI components package, run:
 
 ```bash
 yarn ui:build
+```
+
+To build the webapp, run:
+
+```bash
+yarn next-webapp:build
+```
+
+Then run it with:
+
+```bash
+yarn next-webapp:run
 ```
