@@ -1490,6 +1490,7 @@ __metadata:
     react-select: ^5.7.7
     react-test-renderer: ^18.2.0
     rollup: ^4.0.2
+    rollup-plugin-banner2: ^1.2.2
     rollup-plugin-cleaner: ^1.0.0
     rollup-plugin-dts: ^6.1.0
     rollup-plugin-peer-deps-external: ^2.2.4
@@ -6816,6 +6817,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"magic-string@npm:^0.25.7":
+  version: 0.25.9
+  resolution: "magic-string@npm:0.25.9"
+  dependencies:
+    sourcemap-codec: ^1.4.8
+  checksum: 9a0e55a15c7303fc360f9572a71cffba1f61451bc92c5602b1206c9d17f492403bf96f946dfce7483e66822d6b74607262e24392e87b0ac27b786e69a40e9b1a
+  languageName: node
+  linkType: hard
+
 "magic-string@npm:^0.27.0":
   version: 0.27.0
   resolution: "magic-string@npm:0.27.0"
@@ -8130,6 +8140,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rollup-plugin-banner2@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "rollup-plugin-banner2@npm:1.2.2"
+  dependencies:
+    magic-string: ^0.25.7
+  checksum: 6647602b31d35d5f925920254e70fa9f0d272fda2a3eae0a749a500f32c78ce82f3f48200c5b6cc0f983fe412471b749b53333d87f9e430bd8b2a95637648347
+  languageName: node
+  linkType: hard
+
 "rollup-plugin-cleaner@npm:^1.0.0":
   version: 1.0.0
   resolution: "rollup-plugin-cleaner@npm:1.0.0"
@@ -8529,6 +8548,13 @@ __metadata:
   version: 0.7.4
   resolution: "source-map@npm:0.7.4"
   checksum: 01cc5a74b1f0e1d626a58d36ad6898ea820567e87f18dfc9d24a9843a351aaa2ec09b87422589906d6ff1deed29693e176194dc88bcae7c9a852dc74b311dbf5
+  languageName: node
+  linkType: hard
+
+"sourcemap-codec@npm:^1.4.8":
+  version: 1.4.8
+  resolution: "sourcemap-codec@npm:1.4.8"
+  checksum: b57981c05611afef31605732b598ccf65124a9fcb03b833532659ac4d29ac0f7bfacbc0d6c5a28a03e84c7510e7e556d758d0bb57786e214660016fb94279316
   languageName: node
   linkType: hard
 

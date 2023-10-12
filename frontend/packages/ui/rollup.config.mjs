@@ -4,6 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
 import dts from 'rollup-plugin-dts';
+import banner2 from 'rollup-plugin-banner2';
 
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
@@ -47,6 +48,7 @@ const configuration = {
     typescript({ tsconfig: './tsconfig.json' }),
     visualizer({ filename: './build_stats/bundle.html' }),
     terser(),
+    banner2(() => `'use client';`),
   ],
   // @babel/runtime has a long id, doing as
   // suggested in docs.
