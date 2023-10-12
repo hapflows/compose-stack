@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "@/styles/project-ui.scss";
 
 export const metadata: Metadata = {
   title: "Compose Stack Next WebApp",

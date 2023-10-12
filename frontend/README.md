@@ -46,6 +46,9 @@ To develop the webapp, run:
 yarn next-webapp:dev
 ```
 
+**Note**: when running `next-webapp:dev`, yarn runs the watcher for the `ui`
+package as well, so it's not necessary to run it separately.
+
 ## Build
 
 To build the UI components package, run:

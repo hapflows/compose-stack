@@ -1,0 +1,70 @@
+:root {
+  --color-title-light: #383838;
+  --primary-color-negative: #f4f2ff;
+}
+
+body {
+  font-family: $ui-font;
+  min-width: 320px;
+  height: 100vh;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+}
+
+.title {
+  &--h1 {
+    font-size: 42px;
+    line-height: 56px;
+  }
+  &--h2 {
+    font-size: 32px;
+    line-height: 48px;
+  }
+  &--h3 {
+    font-size: 28px;
+    line-height: 42px;
+  }
+  &--h4 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  &--h5 {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  &--h6 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.color-black {
+  color: $ui-color-black;
+}
+.color-black-bg {
+  background-color: $ui-color-black;
+}
+.color-on-black {
+  color: white;
+}
+
+.color-text {
+  color: var(--text-color);
+}
+
+.color-text-light {
+  color: var(--text-color-light);
+}
+
+.full-page-content {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}

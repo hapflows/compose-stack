@@ -1,0 +1,25 @@
+@use "@fontsource/nunito/scss/mixins" as Nunito;
+
+@include Nunito.fontFace($weight: 300, $display: auto);
+@include Nunito.fontFace($weight: 400, $display: auto);
+@include Nunito.fontFace($weight: 600, $display: auto);
+@include Nunito.fontFace($weight: 700, $display: auto);
+@include Nunito.fontFace($weight: 900, $display: auto);
+
+@import "~material-design-icons-iconfont/dist/material-design-icons.css";
+
+/**
+SCSS entry point file.
+
+Vars are imported here, then dashboard styles and components
+and finally the scss of this dashboard.
+
+In this order, we can override variables and pass them to
+the dashboard styles.
+*/
+
+@import "./vars";
+
+@import "../../../../packages/ui/src/style/ui.full.scss";
+
+@import "./project-ui-webapp.scss";
