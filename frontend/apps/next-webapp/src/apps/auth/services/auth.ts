@@ -4,6 +4,8 @@ import {
   UserTokens,
   RequestVerificationTokenResponse,
   RegisterResponse,
+  ForgotPasswordResponse,
+  ResetPasswordResponse,
 } from "./auth.types";
 
 const LS_USER_TOKENS_ACCESS_TOKEN = "USER_TOKENS_ACCESS_TOKEN";
@@ -147,6 +149,40 @@ export class AuthenticationService {
   removePersistentTokens() {
     localStorage.removeItem(LS_USER_TOKENS_ACCESS_TOKEN);
     localStorage.removeItem(LS_USER_TOKENS_REFRESH_TOKEN);
+  }
+
+  /**
+   * FORGOT PASSWORD
+   */
+
+  /**
+   * Request a reset password token.
+   */
+  forgotPassword(email: string): Promise<ForgotPasswordResponse> {
+    const response = requests.POST<ForgotPasswordResponse>(
+      "/auth/forgot-password",
+      { email }
+    );
+    return response;
+  }
+
+  /**
+   * Use a reset password token to change the user password.
+   */
+  resetPassword(
+    email: string,
+    password: string,
+    token: string
+  ): Promise<ResetPasswordResponse> {
+    const response = requests.POST<ResetPasswordResponse>(
+      "/auth/reset-password",
+      {
+        email,
+        token,
+        password,
+      }
+    );
+    return response;
   }
 }
 

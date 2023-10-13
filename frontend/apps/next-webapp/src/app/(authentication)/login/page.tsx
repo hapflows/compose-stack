@@ -9,6 +9,9 @@ export default function LoginPage() {
       <div className="m-t-20">
         Not registered? <Link href="/register">Register here.</Link>
       </div>
+      <div className="m-t-20">
+        Forgot Password? <Link href="/forgot-password">Recover it here.</Link>
+      </div>
     </div>
   );
 }

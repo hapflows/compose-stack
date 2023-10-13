@@ -33,3 +33,11 @@ type RegisterResponseErrorDetail =
   | {
       code: "ErrorCode.REGISTER_USER_ALREADY_EXISTS";
     };
+
+export interface ForgotPasswordResponse {
+  token_sent: boolean;
+}
+
+export interface ResetPasswordResponse {
+  password_reset: boolean;
+}
