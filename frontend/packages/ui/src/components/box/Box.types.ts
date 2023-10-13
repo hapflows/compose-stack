@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export type BoxVariantType = 'none' | 'info' | 'warning' | 'success';
+export type BoxVariantType = 'none' | 'info' | 'warning' | 'success' | 'error';
 
 export interface BoxProps
   extends React.PropsWithChildren<React.ComponentPropsWithoutRef<React.ElementType>> {

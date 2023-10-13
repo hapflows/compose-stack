@@ -19,8 +19,14 @@
     background-color: $ui-color-positive-light;
   }
 
+  &--error {
+    border: 1px solid $ui-color-negative;
+    background-color: $ui-color-negative-light;
+  }
+
   &__header {
     font-weight: 800;
+    margin-bottom: 10px;
   }
 
   &__body {
@@ -52,6 +58,12 @@
     &--success {
       background-color: $ui-color-positive;
       color: $ui-color-on-positive;
+      padding: 7px;
+      border-radius: 50%;
+    }
+    &--error {
+      background-color: $ui-color-negative;
+      color: $ui-color-on-negative;
       padding: 7px;
       border-radius: 50%;
     }

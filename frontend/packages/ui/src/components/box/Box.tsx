@@ -21,6 +21,7 @@ const ICONS: { [variant in BoxVariantType]: string } = {
   warning: 'warning_amber',
   none: '',
   success: 'check_circle_outline',
+  error: 'close',
 };
 
 export function Box({
