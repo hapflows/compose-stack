@@ -60,6 +60,7 @@ export class Requests {
       fetchParams,
       responseType = "json",
       returnResponse = false,
+      onError,
     }: RequestOptions = {}
   ): Promise<TResponse> {
     if (this.mocks[url]) {
@@ -105,6 +106,10 @@ export class Requests {
             response.status,
             response.statusText
           );
+          if (onError) {
+            onError(response);
+            return;
+          }
           throw new RequestInvalid(response + "");
         }
 

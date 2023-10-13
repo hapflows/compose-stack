@@ -11,4 +11,5 @@ export interface RequestOptions {
   fetchParams?: any;
   responseType?: string;
   returnResponse?: boolean;
+  onError?: (response: Response) => void;
 }
