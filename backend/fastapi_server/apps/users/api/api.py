@@ -138,7 +138,7 @@ async def register(user_create: UserCreate, session=Depends(get_db_session)):
         )
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=str(ErrorCode.REGISTER_USER_ALREADY_EXISTS),
+            detail={"code": str(ErrorCode.REGISTER_USER_ALREADY_EXISTS)},
         )
     except exceptions.InvalidPasswordException as e:
         raise HTTPException(
