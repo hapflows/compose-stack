@@ -12,10 +12,12 @@
     "@compose-stack-ui/ui": "0.0.1",
     "@fontsource/nunito": "^4.5.9",
     "focus-trap-react": "^10.2.2",
+    "immer": "^10.0.3",
     "next": "13.4.15",
     "react": "^18",
     "react-dom": "^18",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "zustand": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^20",

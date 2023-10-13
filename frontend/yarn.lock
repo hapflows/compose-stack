@@ -1454,11 +1454,13 @@ __metadata:
     eslint: ^8
     eslint-config-next: 13.4.15
     focus-trap-react: ^10.2.2
+    immer: ^10.0.3
     next: 13.4.15
     react: ^18
     react-dom: ^18
     react-transition-group: ^4.4.5
     typescript: ^5
+    zustand: ^4.4.3
   languageName: unknown
   linkType: soft
 
@@ -5456,6 +5458,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"immer@npm:^10.0.3":
+  version: 10.0.3
+  resolution: "immer@npm:10.0.3"
+  checksum: 76acabe6f40e752028313762ba477a5d901e57b669f3b8fb406b87b9bb9b14e663a6fbbf5a6d1ab323737dd38f4b2494a4e28002045b88948da8dbf482309f28
+  languageName: node
+  linkType: hard
+
 "immutable@npm:^4.0.0":
   version: 4.3.4
   resolution: "immutable@npm:4.3.4"
@@ -9317,6 +9326,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"use-sync-external-store@npm:1.2.0":
+  version: 1.2.0
+  resolution: "use-sync-external-store@npm:1.2.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 5c639e0f8da3521d605f59ce5be9e094ca772bd44a4ce7322b055a6f58eeed8dda3c94cabd90c7a41fb6fa852210092008afe48f7038792fd47501f33299116a
+  languageName: node
+  linkType: hard
+
 "util-deprecate@npm:^1.0.1":
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
@@ -9649,5 +9667,25 @@ __metadata:
   version: 3.21.4
   resolution: "zod@npm:3.21.4"
   checksum: f185ba87342ff16f7a06686767c2b2a7af41110c7edf7c1974095d8db7a73792696bcb4a00853de0d2edeb34a5b2ea6a55871bc864227dace682a0a28de33e1f
+  languageName: node
+  linkType: hard
+
+"zustand@npm:^4.4.3":
+  version: 4.4.3
+  resolution: "zustand@npm:4.4.3"
+  dependencies:
+    use-sync-external-store: 1.2.0
+  peerDependencies:
+    "@types/react": ">=16.8"
+    immer: ">=9.0"
+    react: ">=16.8"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    immer:
+      optional: true
+    react:
+      optional: true
+  checksum: 3ed16457a3a4b9fe6523f52d397af37db8fab5687dd21a23ede25f657346b25df374490baea27f10d416faae5e96acf7b4065c86044746d775881d266d1500f0
   languageName: node
   linkType: hard
