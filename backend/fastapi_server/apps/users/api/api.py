@@ -354,7 +354,7 @@ async def forgot_password(
         template_path="users/user_forgot_password",
         variables={
             "first_name": user.first_name,
-            "reset_url": f"{settings.app_url}/login/reset-password?reset_token={forgot_password_token}",
+            "reset_url": f"{settings.app_url}/forgot-password/reset?reset_token={forgot_password_token}",
             "reset_action": "Click here to reset your password",
         },
     )
