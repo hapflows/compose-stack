@@ -1,10 +1,12 @@
 import Link from "next/link";
 
-export default function Page() {
+import { LoginForm } from "@/apps/auth/components/login-form/LoginForm";
+
+export default function LoginPage() {
   return (
     <div>
-      <div>The login form will be here.</div>
-      <div>
+      <LoginForm />
+      <div className="m-t-20">
         Not registered? <Link href="/register">Register here.</Link>
       </div>
     </div>

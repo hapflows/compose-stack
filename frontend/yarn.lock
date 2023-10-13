@@ -1448,6 +1448,7 @@ __metadata:
   dependencies:
     "@compose-stack-ui/ui": 0.0.1
     "@fontsource/nunito": ^4.5.9
+    "@hookform/resolvers": ^3.3.2
     "@types/node": ^20
     "@types/react": ^18
     "@types/react-dom": ^18
@@ -1458,8 +1459,10 @@ __metadata:
     next: 13.4.15
     react: ^18
     react-dom: ^18
+    react-hook-form: ^7.47.0
     react-transition-group: ^4.4.5
     typescript: ^5
+    zod: ^3.22.4
     zustand: ^4.4.3
   languageName: unknown
   linkType: soft
@@ -1712,6 +1715,15 @@ __metadata:
   version: 4.5.12
   resolution: "@fontsource/nunito@npm:4.5.12"
   checksum: 9158cda4fbdec12f9760a58b1ca51eaae38382f682e3b5c838ff2a0fe58bb3894e22400e95c9a8a1cb6a81485a80d29a827afdae46c7656686116efb01ce5772
+  languageName: node
+  linkType: hard
+
+"@hookform/resolvers@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "@hookform/resolvers@npm:3.3.2"
+  peerDependencies:
+    react-hook-form: ^7.0.0
+  checksum: bcaefe2a8a212b015b3ea99c93d7ecb5c8f475606d83be9d82dc6cc0cbb3cda03f7fd7a4426688c2de29b6800b93adbf9abb932a1dafee1d053dcaa69ec13f3f
   languageName: node
   linkType: hard
 
@@ -7784,6 +7796,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-hook-form@npm:^7.47.0":
+  version: 7.47.0
+  resolution: "react-hook-form@npm:7.47.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: dec192fec9c54e436f9e47008635dd7849b6b119ed477a9b0cd491367a0b2ced3427cd937febfb245e1cb7578c863917181d903eff4519c2787bf713ec7d3426
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.12.0 || ^17.0.0 || ^18.0.0, react-is@npm:^18.0.0, react-is@npm:^18.2.0":
   version: 18.2.0
   resolution: "react-is@npm:18.2.0"
@@ -9667,6 +9688,13 @@ __metadata:
   version: 3.21.4
   resolution: "zod@npm:3.21.4"
   checksum: f185ba87342ff16f7a06686767c2b2a7af41110c7edf7c1974095d8db7a73792696bcb4a00853de0d2edeb34a5b2ea6a55871bc864227dace682a0a28de33e1f
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.22.4":
+  version: 3.22.4
+  resolution: "zod@npm:3.22.4"
+  checksum: 80bfd7f8039b24fddeb0718a2ec7c02aa9856e4838d6aa4864335a047b6b37a3273b191ef335bf0b2002e5c514ef261ffcda5a589fb084a48c336ffc4cdbab7f
   languageName: node
   linkType: hard
 

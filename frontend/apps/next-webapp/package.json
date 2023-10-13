@@ -11,12 +11,15 @@
   "dependencies": {
     "@compose-stack-ui/ui": "0.0.1",
     "@fontsource/nunito": "^4.5.9",
+    "@hookform/resolvers": "^3.3.2",
     "focus-trap-react": "^10.2.2",
     "immer": "^10.0.3",
     "next": "13.4.15",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.47.0",
     "react-transition-group": "^4.4.5",
+    "zod": "^3.22.4",
     "zustand": "^4.4.3"
   },
   "devDependencies": {
