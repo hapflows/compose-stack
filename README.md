@@ -69,6 +69,7 @@ configuration file.
 ```sh
 docker-compose -f docker-compose.dev.yml build
 docker-compose -f docker-compose.dev.yml up
+docker-compose -f docker-compose.dev.yml exec compose-stack-backend-dev alembic upgrade head
 ```
 
 ### Frontend
