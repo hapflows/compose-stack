@@ -1,11 +1,81 @@
 import { requests } from "@/core/requests/requests";
 
-import { UserTokens } from "./auth.types";
+import {
+  UserTokens,
+  RequestVerificationTokenResponse,
+  RegisterResponse,
+} from "./auth.types";
 
 const LS_USER_TOKENS_ACCESS_TOKEN = "USER_TOKENS_ACCESS_TOKEN";
 const LS_USER_TOKENS_REFRESH_TOKEN = "USER_TOKENS_REFRESH_TOKEN";
 
 export class AuthenticationService {
+  /**
+   * REGISTRATION
+   */
+
+  /**
+   * Registers a user given names, email and password.
+   * After creating a user, requests a verification token.
+   */
+  async register(
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string
+  ): Promise<RegisterResponse> {
+    const payload = {
+      email,
+      password,
+      first_name: firstName,
+      last_name: lastName,
+    };
+
+    return new Promise(async (resolve, reject) => {
+      let response: RegisterResponse = {};
+      const onError = async (response: Response) => {
+        const text = await response.text();
+        const error = JSON.parse(text);
+        return resolve({ error });
+      };
+      try {
+        response["register"] = await requests.POST("/register", payload, {
+          onError,
+        });
+      } catch (e) {
+        console.error(e);
+        return reject({ error: e + "" });
+      }
+      try {
+        const registrationTokens =
+          await requests.POST<RequestVerificationTokenResponse>(
+            "/auth/request-verification-token",
+            {
+              email,
+            }
+          );
+        response["verificationToken"] =
+          registrationTokens.verification_token as string;
+        response["registrationCode"] =
+          registrationTokens.registration_code as string;
+      } catch (e) {
+        console.error(e);
+        return reject({ error: e + "" });
+      }
+      return resolve(response);
+    });
+  }
+
+  /**
+   * Verifies a token and the registration code obtained from register method.
+   */
+  async verify(verificationToken: string, registrationCode: string) {
+    return requests.POST("/auth/verify", {
+      token: verificationToken,
+      registration_code: registrationCode,
+    });
+  }
+
   /**
    * AUTHENTICATION
    */

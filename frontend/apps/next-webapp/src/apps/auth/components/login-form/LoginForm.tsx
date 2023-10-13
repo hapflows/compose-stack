@@ -6,23 +6,17 @@ import { useRouter } from "next/navigation";
 
 import { Field, Input, Title, Button, Box } from "@compose-stack-ui/ui";
 
-import { onAuthenticationSuccess } from "@/apps/auth/hooks/useAuthenticationSetup";
-
-import { authService } from "../../services/auth";
-import { decodeJWT } from "../../services/tokens";
-import { useAuthenticationStore } from "../../store/authentication.store";
-import { AuthenticationUserType } from "../../store/authentication.types";
 import { LoginFormState } from "./LoginForm.types";
 import { useLoginFormValidation } from "./useLoginFormValidation";
+import { useLogin } from "../../hooks/useLogin";
 
 export function LoginForm() {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const resolver = useLoginFormValidation();
-  const [loading, setLoading] = useState(false);
   const [responseError, setResponseError] = useState<string | null>(null);
   const router = useRouter();
 
-  const setUser = useAuthenticationStore((s) => s.setUser);
+  const { loading, login, onLogin } = useLogin();
 
   const {
     register,
@@ -34,21 +28,12 @@ export function LoginForm() {
 
   const onSubmit = async (props: LoginFormState) => {
     setResponseError(null);
-    setLoading(true);
-    let userTokens;
-    try {
-      userTokens = await authService.authenticate(props.email, props.password);
-    } catch {
+    const loginResponse = await login(props.email, props.password);
+    if (!loginResponse.success) {
       setResponseError("Email or password not valid");
-      setLoading(false);
       return;
     }
-    setLoading(false);
-    authService.savePersistentTokens(userTokens);
-    const user: AuthenticationUserType = decodeJWT(userTokens.access_token);
-    onAuthenticationSuccess();
-    setUser(user);
-
+    onLogin(loginResponse.userTokens);
     router.push("/dashboard");
   };
 
