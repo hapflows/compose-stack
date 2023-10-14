@@ -1,0 +1,24 @@
+.main-nav {
+  position: sticky;
+  top: 0;
+  height: 46px;
+  background-color: var(--background-color-light);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 20px;
+
+    &--left {
+      font-size: 1.2rem;
+      justify-content: left;
+    }
+    &--right {
+      font-size: 0.9rem;
+      justify-content: right;
+    }
+  }
+}
