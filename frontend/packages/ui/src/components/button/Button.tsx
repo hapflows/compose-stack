@@ -67,13 +67,13 @@ export const Button = React.forwardRef<ButtonRef, ButtonProps>(
         {...restProps}
       >
         {isLoading && (loaderPlacement === 'left' || loaderPlacement === 'start') && (
-          <Spinner className={loaderClasses} />
+          <Spinner className={loaderClasses} size={size} />
         )}
 
         <ButtonContent {...buttonContentProps} />
 
         {isLoading && (loaderPlacement === 'right' || loaderPlacement === 'end') && (
-          <Spinner className={loaderClasses} />
+          <Spinner className={loaderClasses} size={size} />
         )}
       </Tag>
     );

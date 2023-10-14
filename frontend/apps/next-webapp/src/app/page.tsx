@@ -1,6 +1,6 @@
-import Link from "next/link";
-
 import { Button, Text, Title } from "@compose-stack-ui/ui";
+
+import { Link } from "@/components/link/Link";
 
 export default function Home() {
   return (

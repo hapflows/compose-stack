@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import { Link } from "@/components/link/Link";
 import { RegisterWizard } from "@/apps/auth/components/register-wizard/RegisterWizard";
 
 export default function Page() {

@@ -73,7 +73,7 @@ export function RegisterWizard() {
   };
 
   return (
-    <div className="w-400">
+    <div className="w-500">
       <div className="flex-center-center">
         <Title tag="h3" className="color-black">
           Register

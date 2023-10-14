@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import { Link } from "@/components/link/Link";
 import { ForgotPasswordWizard } from "@/apps/auth/components/forgot-password-wizard/ForgotPasswordWizard";
 
 export default function ForgotPasswordPage() {
