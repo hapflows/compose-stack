@@ -1,4 +1,3 @@
-import json
 from starlette.testclient import TestClient
 
 
@@ -26,12 +25,6 @@ def test_registration_flow(test_app: TestClient):
     tokens = response.json()
     verification_token = tokens["verification_token"]
     registration_code = tokens["registration_code"]
-
-    import pprint
-
-    print("=" * 40)
-    pprint.pprint(tokens)
-    print("=" * 40)
 
     # Verify user
     response = test_app.post(
