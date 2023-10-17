@@ -21,6 +21,7 @@ from fastapi_server.apps.users.api import api as users_api
 from fastapi_server.apps.users.auth import with_active_user
 from fastapi_server.apps.feature_flags.api import api as feature_flags_api
 from fastapi_server.apps.projects.api import api as projects_api
+from fastapi_server.apps.todos.api import api as todos_api
 
 cors_origins = os.getenv("CORS_ORIGINS", "").split(";")
 
@@ -46,6 +47,7 @@ app.add_middleware(
 prefix_router.include_router(users_api.router)
 prefix_router.include_router(feature_flags_api.router)
 prefix_router.include_router(projects_api.router)
+prefix_router.include_router(todos_api.router)
 
 
 @prefix_router.get("/_authenticated")
