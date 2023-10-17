@@ -1,4 +1,7 @@
+from typing import Literal
+
 from fastapi import HTTPException
+from sqlalchemy import func, Select, select
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncEngine, AsyncSession
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import sessionmaker, declarative_base
@@ -48,9 +51,18 @@ async def get_db_session() -> AsyncSession:
             await engine.dispose()
 
 
+def paginate_query(query: Select, page: int, page_size: int):
+    paginated_query = query.limit(page_size).offset((page - 1) * page_size)
+    count_query = select(func.count()).select_from(query.subquery())
+    return paginated_query, count_query
+
+
 def print_statement(statement):
     try:
         print(statement.compile(compile_kwargs={"literal_binds": True}))
     except:
         print("Cannot apply literal binds to the statement. Printing raw:")
         print(statement)
+
+
+OrderDirectionType = Literal["asc", "desc"]
