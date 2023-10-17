@@ -12,6 +12,7 @@ from fastapi_server.apps.users.database.postgres import get_user_db, DB as Users
 
 class Databases(TypedDict):
     feature_flags: FeatureFlagsDB
+    projects: ProjectsDB
     users: UsersDB
 
 

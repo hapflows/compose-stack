@@ -17,12 +17,12 @@ class ProjectRead(BaseModel):
 
 class ProjectCreate(BaseModel):
     name: str
-    description: Optional[str]
+    description: Optional[str] = None
 
 
 class ProjectUpdate(BaseModel):
-    name: Optional[str]
-    description: Optional[str]
+    name: Optional[str] = None
+    description: Optional[str] = None
 
 
 class ProjectMemberRead(BaseModel):

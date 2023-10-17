@@ -26,7 +26,6 @@ from ..constants import ErrorCode
 from ..database.postgres import DB, get_user_db
 from ..schemas import (
     UserCreate,
-    UserTokens,
     UserRead,
     UserPasswordReset,
     ActiveUser,
@@ -43,18 +42,6 @@ router = APIRouter(
     tags=["users"],
     responses={404: {"description": "Not found"}},
 )
-
-
-@router.get("/users", response_description="List all users")
-async def get_users(
-    db: DB = Depends(get_user_db), user: UserTokens = Depends(with_active_user)
-):
-    total = await db.count_users()
-    users = await db.get_users()
-    return {
-        "data": [UserRead(**u.dict()) for u in users],
-        "total": total,
-    }
 
 
 #################
@@ -234,9 +221,7 @@ async def verify(
     return {"verified": True}
 
 
-# /login is used by docs
 @router.post("/login", name=f"auth:login:login", responses=login_responses)
-@router.post("/users/login", name=f"auth:login:login", responses=login_responses)
 async def login(
     credentials: OAuth2PasswordRequestForm = Depends(), db: DB = Depends(get_user_db)
 ):

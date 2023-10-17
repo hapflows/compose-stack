@@ -5,13 +5,9 @@ from sqlalchemy import update, delete
 from sqlalchemy.future import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
 
-from fastapi_server.resources.database.postgres import get_db_engine, get_db_session
+from fastapi_server.resources.database.postgres import get_db_session
 from ..models import FeatureFlag
-
-
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=get_db_engine())
 
 
 class DB:
